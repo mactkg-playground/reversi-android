@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cell">#6C7F6C</color>
+    <color name="dark">#1F1F1F</color>
+    <color name="light">#EFEFEF</color>
+</resources>

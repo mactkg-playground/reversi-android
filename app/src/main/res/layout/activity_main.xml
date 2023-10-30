@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <!-- View for Message -->
+    <RelativeLayout
+        android:id="@+id/messageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp">
+
+        <!-- DiskView -->
+        <net.makerbox.reversi.android.views.DiskView
+            android:id="@+id/messageDiskView"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true" />
+
+        <!-- Message Label -->
+        <TextView
+            android:id="@+id/messageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/messageDiskView"
+            android:layout_marginStart="8dp"
+            android:layout_centerVertical="true"
+            android:text="'s turn'"
+            android:textSize="32sp" />
+    </RelativeLayout>
+    <!-- Dark View -->
+    <RelativeLayout
+        android:id="@+id/darkView"
+        android:layout_width="270dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-31dp"
+        android:layout_alignTop="@+id/boardView">
+
+        <!-- DiskView -->
+        <net.makerbox.reversi.android.views.DiskView
+            android:id="@+id/diskDarkView"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true" />
+
+        <!-- SegmentedControl and other views as per requirement -->
+        <!-- You can use RadioGroup, RadioButton, Spinner, etc. for selection -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/playerControl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/diskDarkView"
+            android:layout_marginLeft="26dp"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manual" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computer" />
+        </com.google.android.material.chip.ChipGroup>
+
+    </RelativeLayout>
+
+    <!-- BoardView -->
+    <RelativeLayout
+        android:id="@+id/boardView"
+        android:layout_width="374dp"
+        android:layout_height="374dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="26dp"
+        android:background="#CCD5D5">
+
+        <!-- Your game board UI goes here -->
+        <!-- It can be made using a GridLayout, ImageView, or other necessary widgets -->
+    </RelativeLayout>
+
+
+
+    <!-- Light View -->
+    <RelativeLayout
+        android:id="@+id/lightView"
+        android:layout_width="270dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="655dp">
+
+        <!-- DiskView -->
+        <net.makerbox.reversi.android.views.DiskView
+            android:id="@+id/diskLightView"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true" />
+
+        <!-- SegmentedControl and other views as per requirement -->
+
+    </RelativeLayout>
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp" />
+
+</RelativeLayout>
