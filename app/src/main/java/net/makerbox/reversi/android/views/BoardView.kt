@@ -22,7 +22,7 @@ class BoardView @JvmOverloads constructor(
     val xRange: IntRange = 0 until boardWidth
     val yRange: IntRange = 0 until boardHeight
 
-    var delegate: BoardViewDelegate? = null
+    var listener: BoardViewSelectListener? = null
 
     init {
         orientation = VERTICAL
@@ -83,7 +83,7 @@ class BoardView @JvmOverloads constructor(
     }
 }
 
-interface BoardViewDelegate {
+interface BoardViewSelectListener {
     fun didSelectCellAt(boardView: BoardView, x: Int, y: Int)
 }
 
@@ -94,6 +94,6 @@ private class CellSelectionAction(
 ) : View.OnClickListener {
 
     override fun onClick(view: View?) {
-        boardView.delegate?.didSelectCellAt(boardView, x, y)
+        boardView.listener?.didSelectCellAt(boardView, x, y)
     }
 }
